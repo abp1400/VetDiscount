@@ -1,0 +1,9 @@
+<div class="infoDisplay">
+	<div ng-repeat="discount in vm.location.discounts">
+		<h5>{{discount.amount}}</h5>
+		{{discount.info}}
+		<!-- Only displays if startdate is present -->
+		<div ng-show="discount.startDate" class="">{{discount.startDate}} - {{discount.endDate}}</div>
+		<br>
+	</div>
+</div>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test.AddressTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-01-11T22:48:39" hostname="Jacobs-MacBook-Pro.local" time="6.744">
+  <properties/>
+  <testcase name="test_address_location_connection" classname="test.AddressTest" time="6.744"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Jan 11, 2018 3:48:39 PM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
+INFO: HHH000204: Processing PersistenceUnitInfo [
+	name: vetPU
+	...]
+Jan 11, 2018 3:48:39 PM org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate Core {5.2.1.Final}
+Jan 11, 2018 3:48:39 PM org.hibernate.cfg.Environment <clinit>
+INFO: HHH000206: hibernate.properties not found
+Jan 11, 2018 3:48:39 PM org.hibernate.cfg.Environment buildBytecodeProvider
+INFO: HHH000021: Bytecode provider name : javassist
+Jan 11, 2018 3:48:39 PM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
+INFO: HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+Jan 11, 2018 3:48:39 PM org.hibernate.engine.jdbc.connections.internal.ConnectionProviderInitiator initiateService
+INFO: HHH000130: Instantiating explicit connection provider: org.hibernate.connection.C3P0ConnectionProvider
+Jan 11, 2018 3:48:39 PM org.hibernate.c3p0.internal.C3P0ConnectionProvider configure
+INFO: HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://localhost:3306/vetdiscountdb
+Jan 11, 2018 3:48:39 PM org.hibernate.c3p0.internal.C3P0ConnectionProvider configure
+INFO: HHH10001001: Connection properties: {user=veteran, password=****, zeroDateTimeBehavior=convertToNull}
+Jan 11, 2018 3:48:39 PM org.hibernate.c3p0.internal.C3P0ConnectionProvider configure
+INFO: HHH10001003: Autocommit mode: false
+Jan 11, 2018 3:48:39 PM com.mchange.v2.log.MLog <clinit>
+INFO: MLog clients using java 1.4+ standard logging.
+Jan 11, 2018 3:48:44 PM com.mchange.v2.c3p0.C3P0Registry banner
+INFO: Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+Jan 11, 2018 3:48:44 PM org.hibernate.c3p0.internal.C3P0ConnectionProvider configure
+INFO: HHH10001007: JDBC isolation level: <unknown>
+Jan 11, 2018 3:48:44 PM com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource getPoolManager
+INFO: Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@c08211fa [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@f4eb4665 [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1bqrzrv9s1s7i30m9dgbg1|1f413fcb, idleConnectionTestPeriod -> 300, initialPoolSize -> 0, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 0, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@11a56b6f [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1bqrzrv9s1s7i30m9dgbg1|1da67e59, jdbcUrl -> jdbc:mysql://localhost:3306/vetdiscountdb, properties -> {user=******, password=******, zeroDateTimeBehavior=convertToNull} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1bqrzrv9s1s7i30m9dgbg1|3c6007ec, numHelperThreads -> 3 ]
+Jan 11, 2018 3:48:44 PM org.hibernate.dialect.Dialect <init>
+INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+Jan 11, 2018 3:48:44 PM org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl useContextualLobCreation
+INFO: HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+]]></system-err>
+</testsuite>

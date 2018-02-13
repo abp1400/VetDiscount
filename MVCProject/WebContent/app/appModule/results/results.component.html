@@ -1,0 +1,12 @@
+
+<div class="resultCard" ng-show="vm.results.length == 0"><h3>Sorry no Results found</h3></div>
+
+<div class="results" id="results">
+	<div ng-repeat="location in vm.results" class="resultCard"   ng-click="vm.makeActive(location)"
+	ng-class="{activeSelection : vm.active === location}">
+		<h3>{{location.company.name}}</h3>
+		{{location.address.street}}, {{location.address.city}}
+		{{location.address.state}} {{location.address.zip}}
+		{{roundedDistance(location.distance)}} Miles
+	</div>
+</div>

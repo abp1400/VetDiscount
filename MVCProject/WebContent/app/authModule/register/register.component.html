@@ -1,0 +1,67 @@
+<!-- <h1>Register</h1>
+<form>
+	<input type="username" placeholder="username" ng-model="user.username"> <br>
+	<input type="email" placeholder="email" ng-model="user.email"><br>
+	<input type="password" placeholder="password" ng-model="user.password"> <br>
+	<input type="password" placeholder="confirm password" ng-model="user.confirm"> <br>
+	<input type="submit" name="" value="Register" ng-click="vm.registerUser(user)">
+</form> -->
+
+
+   
+              <div class="text-center">
+                <h3><b>Register</b></h3></div>
+              <form name ="regform" id="ajax-register-form" role="form" autocomplete="off">
+              <div class="form-group">
+<!--              <label for="username">Username</label>
+ -->                <input type="username" name="username" tabindex="1" class="form-control" placeholder="Username" ng-model="user.username"
+                  ng-minlength="6"  ng-maxlength="25" ng-pattern="/^\w+$/" required>
+               
+                		<div ng-messages="regform.username.$error">
+     				 <p ng-message="minlength">Username must have at least 6 characters.</p>
+      				<p ng-message="maxlength">Username may not exceed 25 characters.</p>
+      				<p ng-message="pattern">Username can only be alphanumeric with an optional underscore.</p>
+      				<p ng-message="required">Providing a Username is mandatory.</p>
+    					</div>
+    			</div>
+              
+              <div class="form-group">
+<!--              <label for="password">Password</label>
+ -->                  <input type="email" name="email" tabindex="1" class="form-control" placeholder="Email Address" ng-model="user.email"
+       				ng-minlength="6"  ng-maxlength="50"  required>
+       				<div ng-messages="regform.email.$error">
+      				<p ng-message="minlength">Email must have at least 6 characters.</p>
+      				<p ng-message="maxlength">Email may not exceed 50 characters.</p>
+      				<p ng-message="required">Providing an Email Address is mandatory.</p>
+    					</div>
+                </div>
+                
+            <div class="form-group">
+<!--              <label for="password">Password</label>
+ -->                  <input type="password" name="password" tabindex="2" class="form-control" placeholder="Password" ng-model="user.password"
+                  ng-minlength="6" ng-maxlength="18" required>
+                	<div ng-messages="regform.password.$error">
+      			<p ng-message="minlength">Email must have at least 6 characters.</p>
+      			<p ng-message="maxlength">Email may not exceed 18 characters.</p>
+      			<p ng-message="required">Providing a Password is mandatory.</p>
+    				</div>  
+          </div>
+              
+           <div class="form-group">
+<!--            <label for="confirm"> Confirm Password</label>
+ -->                  <input type="password" name="confirm" tabindex="2" class="form-control" placeholder="Confirm Password" ng-model="user.confirm"
+                  ng-minlength="6" ng-maxlength="18" required>
+                   <div ng-messages="regform.confirm.$error">
+      				<p ng-message="minlength"> Confirmation Password must have at least 6 characters.</p>
+      				<p ng-message="maxlength">Confirmation Password may not exceed 18 characters.</p>
+      				<p ng-message="required">Providing a Confirmation Password is mandatory and must match password.</p>
+    					</div> 
+                
+           </div>
+            
+            <div class="form-group m-x-auto">
+                      <input type="submit" tabindex="4" class="form-control btn btn-info" value="Register Now" ng-click="vm.registerUser(user);user={}">
+            </div>
+                  
+                
+              </form>

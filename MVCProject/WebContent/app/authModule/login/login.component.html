@@ -1,0 +1,33 @@
+
+			
+              <div class="text-center">  
+              <h3><b>Log In</b></h3></div>
+             <form name="loginform" id="ajax-login-form" role="form" autocomplete="off">
+                <div class="form-group">
+                  <label for="username">Username</label>
+                  <input type="username" name="username" tabindex="1" class="form-control" placeholder="Username" ng-model="user.username" autocomplete="off" ng-minlength="6"  ng-maxlength="25" ng-pattern="/^\w+$/" required>
+                
+				        <div ng-messages="loginform.username.$error">
+      					<p ng-message="minlength">Username must have at least 6 characters.</p>
+      					<p ng-message="maxlength">Username may not exceed 25 characters.</p>
+      					<p ng-message="pattern">Username can only be alphanumeric with an optional underscore.</p>
+      					<p ng-message="required">Providing a Username is mandatory.</p>
+   						 </div>
+				</div>
+                
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" name="password" tabindex="2" class="form-control" placeholder="Password" ng-model="user.password" autocomplete="off" ng-minlength="6"  ng-maxlength="25" required>
+                			       
+                			<div ng-messages="loginform.username.$error">
+      					<p ng-message="minlength">Password must have at least 6 characters.</p>
+      					<p ng-message="maxlength">Password may not exceed 16 characters.</p>
+      					<p ng-message="required">Providing a Password is mandatory.</p>
+   						 </div>
+                </div>
+
+                <div class="form-group m-x-auto">
+                      <input type="submit" tabindex="4" class="form-control btn btn-success" value="Log In" ng-click="vm.login(user); user={}">
+                    </div>
+                  
+              </form>

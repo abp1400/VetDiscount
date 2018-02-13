@@ -1,0 +1,63 @@
+<div ng-hide="vm.editDiscount" ng-repeat="discount in vm.results" class="editCard">
+	<h3>{{discount.amount}}</h3>
+	<hr>
+	{{discount.info}}
+	{{discount.startDate}} - {{discount.endDate}}
+	<button class="btn-sm editButton" type="submit" ng-click="vm.setEditDiscount(discount)">Edit</button>
+	<button class="btn-sm deleteButton" type="submit"
+		ng-click="vm.deleteDiscount(discount.id)">Delete</button>
+</div>
+
+<div ng-show = "vm.editDiscount">
+
+             <form name="discounteditform" id="ajax-discounteditform-form" role="form" autocomplete="off">
+                <div class="form-group">
+                  <label for = "discountamount">Discount Amount</label>
+                  <input type="text" name="discountamount" tabindex="1"  placeholder="Discount Amount" class="form-control" ng-model="vm.editDiscount.amount" autocomplete="off" ng-minlength="3"  ng-maxlength="60">
+                
+				        <div ng-messages="discounteditform.discountamount.$error">
+      					<p ng-message="minlength">Discount Amount must have at least 3 characters.</p>
+      					<p ng-message="maxlength">Discount Amount may not exceed 60 characters.</p>
+      					<p ng-message="required">Providing Discount Amount is mandatory.</p>
+   						 </div>
+				</div>
+                  <div class="form-group">
+              <label for="startdate">Start Date</label>
+                  <input type="text" name="startdate" tabindex="1" class="form-control" placeholder="Start Date" ng-model="vm.editDiscount.startDate"
+       				ng-minlength="3"  ng-maxlength="30">
+       				<div ng-messages="discounteditform.startdate.$error">
+      				<p ng-message="minlength">Start Date must have at least 3 characters.</p>
+      				<p ng-message="maxlength">Start Date may not exceed 30 characters.</p>
+    					</div>
+                </div>
+                  <div class="form-group">
+              <label for="enddate">End Date</label>
+                  <input type="text" name="enddate" tabindex="1" class="form-control" placeholder="End Date" ng-model="vm.editDiscount.endDate"
+       				ng-minlength="3"  ng-maxlength="30">
+       				<div ng-messages="discounteditform.enddate.$error">
+      				<p ng-message="minlength">End Date must have at least 3 characters.</p>
+      				<p ng-message="maxlength">End Date may not exceed 30 characters.</p>
+    					</div>
+                </div>
+                
+                     <div class="form-group">
+              <label for="info">Discount Information</label>
+                  <input type="text" name="info" tabindex="1" class="form-control" placeholder="Info" ng-model="vm.editDiscount.info"
+       				ng-minlength="3"  ng-maxlength="200">
+       				<div ng-messages="discounteditform.enddate.$error">
+      				<p ng-message="minlength">Discount Information must have at least 3 characters.</p>
+      				<p ng-message="maxlength">Discount Information may not exceed 200 characters.</p>
+    					</div>
+                </div>
+                       
+                <div class="form-group m-x-auto">
+                      <input type="submit" tabindex="4" class="form-control btn btn-success" value="Edit" ng-click="vm.doEditDiscount(vm.editDiscount); vm.editDiscount=null">
+                    </div>
+                <div class="form-group m-x-auto">
+                      <input type="submit" tabindex="4" class="form-control btn btn-success" value="Cancel" ng-click="vm.editDiscount=null">
+                    </div>
+                  
+              </form>
+
+
+</div>

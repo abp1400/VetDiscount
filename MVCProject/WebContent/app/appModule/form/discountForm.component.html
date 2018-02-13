@@ -1,0 +1,180 @@
+<!----------- Create New discount ---------------->
+
+<!-- company search bar -->
+<div class="container-fluid">
+	
+	<div class="row justify-content-center">
+		<form class="form-inline" ng-show="!vm.companyClick">
+			<input id="companySearch" class="form-control mr-sm-2" type="text" ng-change="vm.searchCompany()" ng-model="vm.company" placeholder="Search Company" />
+			<!-- <input id="NewCompany" type="submit" ng-click="vm.showNewCompanyForm()" value="Create New Company" /> -->
+			<button id="NewCompany" class="btn mr-sm-2" type="submit" ng-click="vm.showNewCompanyForm()" >Create New Company</button>
+		</form>
+	</div><br />
+	
+	<!-- show Company List -->
+	<!-- <div class="container-fluid"> -->
+	<div class="row justify-content-center">
+		<div ng-show="!vm.companyClick">
+			<div ng-repeat="company in vm.companyResults" ng-click="vm.getLocations(company); vm.companyExists = true">
+				<div id="companyList">
+					{{company.name}}
+				</div><br />
+			</div>
+		</div>
+	</div>
+	
+	<!-- company form -->
+	<div class="row justify-content-center">
+		<div ng-show="vm.showCompanyForm">
+			<div>
+				<form name="companyForm">
+					<input id="companyName" name="companyName" class="form-control mr-sm-2" type="text" ng-model="company.name" placeholder="Company Name" required />
+					<input id="url" class="form-control mr-sm-2" type="text" ng-model="company.storeUrl" placeholder="Company URL" />
+					
+					<!-- type drop down -->
+					<div	>
+						<select id="companyTypeDropDown" name="types" ng-options="type.name for type in vm.typesArr" ng-model="vm.type" placeholder="Type">
+							<option value="">--Types--</option>
+						  	<!-- <option ng-repeat="type in vm.typesArr" ng-model="vm.type">{{type.name}}</option> -->
+					  	</select>
+					  	
+					  	<button id="addCompany" class="btn mr-sm-2" type="submit" ng-click="companyForm.companyName.$valid ? vm.addCompany(company) : false; company = {}" >Add Company</button>
+					</div>
+					<!-- <input id="addCompany" type="submit" ng-click="vm.addCompany(company); company = {}" value="Add Company" /> -->
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	<!-- show locations list based on search result -->
+	<!-- Button - Create new location -->
+	<div class="row justify-content-center">
+		<div ng-show="vm.showLocationList">
+			<button id="NewLocation" class="btn mr-sm-2" type="submit" ng-click="vm.showNewLocationForm()">Create New Company</button>
+			<div ng-repeat="location in vm.locationResults" 
+				ng-click="vm.addLocationFromList(location); vm.locationExists = true">
+				
+				<div id="locationList">
+					<!-- ID : {{location.id}} -->
+					{{location.address.street}}
+					{{location.address.city}}
+					{{location.address.state}}
+					{{location.address.zip}}
+					<!-- {{location.phone}}
+					{{location.hours}} -->
+				</div><br />
+				
+			</div>
+		</div>
+	</div>
+	
+	<!-- location form -->
+	<div class="row justify-content-center">
+		<form ng-show="vm.showLocation">
+			<input id="locationHours" class="form-control mr-sm-2" type="text" ng-model="location.hours" placeholder="Business Hours" />
+			<input id="locationPhone" class="form-control mr-sm-2" type="text" ng-model="location.phoneNumber" placeholder="Phone Number" />
+			<button id="addLocation" type="submit" ng-click="vm.addLocation(location); location = {}" >Add Location</button>
+		</form>
+	</div>
+	
+	<!-- address form -->
+	<div class="row justify-content-center">
+		<form ng-show="vm.showAddress">
+			<input id="addressCity" class="form-control mr-sm-2" type="text" ng-model="address.city" placeholder="City" required />
+			<input id="addressState" class="form-control mr-sm-2" type="text" ng-model="address.state" placeholder="State" required />
+			<input id="addressStreet" class="form-control mr-sm-2" type="text" ng-model="address.street" placeholder="Street" required />
+			<input id="addressZip" class="form-control mr-sm-2" type="text" ng-model="address.zip" placeholder="Zip Code" required />
+			<button id="addAddress" type="submit" ng-click="vm.addAddress(address); address = {}">Add Address</button>
+		</form>
+	</div>
+
+	<!-- discount form -->
+	<div class="row justify-content-center">
+		<form ng-show="vm.showDiscount">
+			<input id="discountAmt" class="form-control mr-sm-2" type="text" ng-model="discount.amount" placeholder="Amount" required/>
+			<input id="discountInfo" class="form-control mr-sm-2" type="text" ng-model="discount.info" placeholder="Details" />
+			<input id="discountStart" class="form-control mr-sm-2" type="text" ng-model="discount.startDate" placeholder="Start (mm/dd/yyy)" />
+			<input id="discountEnd" class="form-control mr-sm-2" type="text" ng-model="discount.endDate" placeholder="End (mm/dd/yyy)" />
+			<button id="addDiscount" type="submit" ng-click="vm.addDiscount(discount); discount = {}">Add Discount</button>
+		</form>
+	</div>
+	
+	<!-- Company info to submit -->
+	<div class="row justify-content-center">
+		<div ng-show="vm.displayAddedCompany">
+			<div>
+				<p class="titles">Company Info</p>
+				<input class="displayInput" type="text" readonly placeholder="Company Name: {{vm.displayAddedCompany.name}}"/>
+				<br />
+				<input class="displayInput" type="text" readonly placeholder="Company Url: {{vm.displayAddedCompany.storeUrl}}"/>
+				<br />
+				<input class="displayInput" type="text" readonly placeholder="Company Type: {{vm.type.name}}"/>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Location info to submit -->
+	<div class="row justify-content-center">
+		<div ng-show="vm.displayAddedLocation">
+			<div>
+				<p class="titles">Location Info</p>
+				<input class="displayInput" type="text" readonly placeholder="Location Hours: {{vm.displayAddedLocation.hours}}"/>
+				<br />
+				<input class="displayInput" type="text" readonly placeholder="Location Phone: {{vm.displayAddedLocation.phoneNumber}}"/>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Address info to submit -->
+	<div class="row justify-content-center">
+		<div ng-show="vm.displayAddedAddress">
+			<div>
+				<p class="titles">Address Info</p>
+				<input class="displayInput" type="text" readonly placeholder="Address City: {{vm.displayAddedAddress.city}}"/>
+				<br />
+				<input class="displayInput" type="text" readonly placeholder="Address State: {{vm.displayAddedAddress.state}}"/>
+				<br />
+				<input class="displayInput" type="text" readonly placeholder="Address Street: {{vm.displayAddedAddress.street}}"/>
+				<br />
+				<input class="displayInput" type="text" readonly placeholder="Address Zip: {{vm.displayAddedAddress.zip}}"/>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Discount info to submit -->
+	<div class="row justify-content-center">
+		<div ng-show="vm.displayAddedDiscount">
+			<div>
+				<p class="titles">Discount Info</p>
+				<input class="displayInput" type="text" readonly placeholder="Discount: {{vm.displayAddedDiscount.amount}}"/>
+				<br />
+				<input class="displayInput" type="text" readonly placeholder="Details: {{vm.displayAddedDiscount.info}}"/>
+				<br />
+				<input class="displayInput" type="text" readonly placeholder="Company Name: {{vm.displayAddedDiscount.start}}"/>
+				<br />
+				<input class="displayInput" type="text" readonly placeholder="Company Url: {{vm.displayAddedDiscount.end}}"/>
+			</div>
+		</div>
+	</div>
+	
+	<!-- submit button - Persist all forms -->
+	<div class="row justify-content-center">
+		<div ng-show="vm.showButton">
+			<button id="cancel" type="submit" ng-click="vm.cancelDiscount()">Cancel Discount</button>
+			<button id="addAllForms" type="submit" ng-click="vm.addAllForms()">Submit Discount</button>
+		</div>
+	</div>
+
+
+</div> <!-- end of container -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

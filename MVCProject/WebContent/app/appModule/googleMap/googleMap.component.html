@@ -1,0 +1,14 @@
+<div id="map" ng-if="vm.mapOptions" map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="{{vm.googleMapsUrl}}">
+	<ng-map center="{{vm.mapOptions.center.lat}},{{vm.mapOptions.center.lng}}" zoom="{{vm.mapOptions.zoom}}" zoom-to-include-markers="auto" single-info-window="true" default-style="false">
+     	<marker ng-repeat="mark in vm.mapOptions.markers" position="[{{mark.address.lat}},{{mark.address.longitude}}]" id="{{mark.id}}" on-mouseover="vm.showDetail(event, {{mark.id}})" ></marker>
+		<info-window id="info" position="{{vm.selectedLocation.address.lat}},{{vm.selectedLocation.address.longitude}}">
+			<div ng-non-bindable="">
+				{{vm.selectedLocation.company.name}}
+				<br>
+				{{vm.selectedLocation.address.street}}, {{vm.selectedLocation.address.city}}
+				<br>
+				<a href="https://www.google.com/maps/dir/?api=1&origin={{vm.origin}}&destination={{vm.destination}}" target="_blank">Directions</a>
+			</div>
+		</info-window>
+   	</ng-map>
+</div>

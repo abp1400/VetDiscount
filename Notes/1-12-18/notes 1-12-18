@@ -1,0 +1,33 @@
+Meeting 8:50am 1-12-18
+Parts of frontend:
+  Pages - Home Page, About, new Discount, Populate Results based on location
+  discountForm.component
+      -Company Form
+        1.name(required)
+        2.url(optional)
+        3.type(required)
+      -Address Form
+        1.Street(required)
+        1.City(required)
+        2.State(required)
+        3.Zip(required)
+      -Location Form
+        1.hours(optional)
+        2.phone(optional)
+      -Discount Form
+        1.Amount(required)
+        2.Info(optional)
+        3.startDate(optional)
+        4.endDate(optional)
+      -login
+        1.username(required)
+        2.password(required)
+      -register user
+        1.username(required)(unique)
+        2.email(required)(unique)
+        3.password(required)
+        4.confirm password(required)
+  navbar.component(searchbar with filters, login/logout - based on wither logged in or not
+  , new discount button)
+----------------------------------------------------------
+First result from search will be the active result

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test.UserTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2018-01-11T22:48:46" hostname="Jacobs-MacBook-Pro.local" time="0.19">
+  <properties/>
+  <testcase name="test_user_company_connection" classname="test.UserTest" time="0.064"/>
+  <testcase name="test_user_discount_connection" classname="test.UserTest" time="0.06"/>
+  <testcase name="test_user_location_connection" classname="test.UserTest" time="0.065"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Jan 11, 2018 3:48:46 PM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
+INFO: HHH000204: Processing PersistenceUnitInfo [
+	name: vetPU
+	...]
+Jan 11, 2018 3:48:46 PM org.hibernate.engine.jdbc.connections.internal.ConnectionProviderInitiator initiateService
+INFO: HHH000130: Instantiating explicit connection provider: org.hibernate.connection.C3P0ConnectionProvider
+Jan 11, 2018 3:48:46 PM org.hibernate.c3p0.internal.C3P0ConnectionProvider configure
+INFO: HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://localhost:3306/vetdiscountdb
+Jan 11, 2018 3:48:46 PM org.hibernate.c3p0.internal.C3P0ConnectionProvider configure
+INFO: HHH10001001: Connection properties: {user=veteran, password=****, zeroDateTimeBehavior=convertToNull}
+Jan 11, 2018 3:48:46 PM org.hibernate.c3p0.internal.C3P0ConnectionProvider configure
+INFO: HHH10001003: Autocommit mode: false
+Jan 11, 2018 3:48:46 PM org.hibernate.c3p0.internal.C3P0ConnectionProvider configure
+INFO: HHH10001007: JDBC isolation level: <unknown>
+Jan 11, 2018 3:48:46 PM com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource getPoolManager
+INFO: Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@fb6191b9 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@6dfcebe7 [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1bqrzrv9s1s7i30m9dgbg1|47794f6a, idleConnectionTestPeriod -> 300, initialPoolSize -> 0, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 0, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@913ea1a [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1bqrzrv9s1s7i30m9dgbg1|655d36ec, jdbcUrl -> jdbc:mysql://localhost:3306/vetdiscountdb, properties -> {user=******, password=******, zeroDateTimeBehavior=convertToNull} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1bqrzrv9s1s7i30m9dgbg1|1a572b7e, numHelperThreads -> 3 ]
+Jan 11, 2018 3:48:46 PM org.hibernate.dialect.Dialect <init>
+INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+Jan 11, 2018 3:48:46 PM org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl useContextualLobCreation
+INFO: HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+Jan 11, 2018 3:48:46 PM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
+INFO: HHH000204: Processing PersistenceUnitInfo [
+	name: vetPU
+	...]
+Jan 11, 2018 3:48:46 PM org.hibernate.engine.jdbc.connections.internal.ConnectionProviderInitiator initiateService
+INFO: HHH000130: Instantiating explicit connection provider: org.hibernate.connection.C3P0ConnectionProvider
+Jan 11, 2018 3:48:46 PM org.hibernate.c3p0.internal.C3P0ConnectionProvider configure
+INFO: HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://localhost:3306/vetdiscountdb
+Jan 11, 2018 3:48:46 PM org.hibernate.c3p0.internal.C3P0ConnectionProvider configure
+INFO: HHH10001001: Connection properties: {user=veteran, password=****, zeroDateTimeBehavior=convertToNull}
+Jan 11, 2018 3:48:46 PM org.hibernate.c3p0.internal.C3P0ConnectionProvider configure
+INFO: HHH10001003: Autocommit mode: false
+Jan 11, 2018 3:48:46 PM org.hibernate.c3p0.internal.C3P0ConnectionProvider configure
+INFO: HHH10001007: JDBC isolation level: <unknown>
+Jan 11, 2018 3:48:46 PM com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource getPoolManager
+INFO: Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@a04a6cc0 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@1d60c068 [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1bqrzrv9s1s7i30m9dgbg1|7c82b8af, idleConnectionTestPeriod -> 300, initialPoolSize -> 0, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 0, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@5e0d4c46 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1bqrzrv9s1s7i30m9dgbg1|ee4425, jdbcUrl -> jdbc:mysql://localhost:3306/vetdiscountdb, properties -> {user=******, password=******, zeroDateTimeBehavior=convertToNull} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1bqrzrv9s1s7i30m9dgbg1|6fa953cf, numHelperThreads -> 3 ]
+Jan 11, 2018 3:48:46 PM org.hibernate.dialect.Dialect <init>
+INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+Jan 11, 2018 3:48:46 PM org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl useContextualLobCreation
+INFO: HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+Jan 11, 2018 3:48:47 PM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
+INFO: HHH000204: Processing PersistenceUnitInfo [
+	name: vetPU
+	...]
+Jan 11, 2018 3:48:47 PM org.hibernate.engine.jdbc.connections.internal.ConnectionProviderInitiator initiateService
+INFO: HHH000130: Instantiating explicit connection provider: org.hibernate.connection.C3P0ConnectionProvider
+Jan 11, 2018 3:48:47 PM org.hibernate.c3p0.internal.C3P0ConnectionProvider configure
+INFO: HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://localhost:3306/vetdiscountdb
+Jan 11, 2018 3:48:47 PM org.hibernate.c3p0.internal.C3P0ConnectionProvider configure
+INFO: HHH10001001: Connection properties: {user=veteran, password=****, zeroDateTimeBehavior=convertToNull}
+Jan 11, 2018 3:48:47 PM org.hibernate.c3p0.internal.C3P0ConnectionProvider configure
+INFO: HHH10001003: Autocommit mode: false
+Jan 11, 2018 3:48:47 PM org.hibernate.c3p0.internal.C3P0ConnectionProvider configure
+INFO: HHH10001007: JDBC isolation level: <unknown>
+Jan 11, 2018 3:48:47 PM com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource getPoolManager
+INFO: Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@eb2b4773 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@b27fc7c6 [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1bqrzrv9s1s7i30m9dgbg1|8be6291, idleConnectionTestPeriod -> 300, initialPoolSize -> 0, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 0, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@6cabda88 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1bqrzrv9s1s7i30m9dgbg1|269fded3, jdbcUrl -> jdbc:mysql://localhost:3306/vetdiscountdb, properties -> {user=******, password=******, zeroDateTimeBehavior=convertToNull} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1bqrzrv9s1s7i30m9dgbg1|56f1a050, numHelperThreads -> 3 ]
+Jan 11, 2018 3:48:47 PM org.hibernate.dialect.Dialect <init>
+INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+Jan 11, 2018 3:48:47 PM org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl useContextualLobCreation
+INFO: HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+]]></system-err>
+</testsuite>

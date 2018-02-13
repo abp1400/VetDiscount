@@ -1,0 +1,104 @@
+<div ng-hide="vm.editLocation">
+	<div ng-repeat="location in vm.results" class="editCard">
+		<h3>{{location.company.name}}</h3>
+		<h4>Address: {{location.address.street}}, {{location.address.city}},
+		{{location.address.state}} {{location.address.zip}} </h4>
+		<h4>Hours: {{location.hours}}</h4>
+		<h4>Phone Number: {{location.phoneNumber}} </h4>
+		<button class="btn-sm editButton" type="submit" ng-click="vm.setEditLocation(location)" >Edit</button>
+		<button class="btn-sm deleteButton" type="submit" ng-click="vm.deleteLocation(location)" >Delete</button>
+	</div>
+</div>
+
+<div ng-show = "vm.editLocation  && !vm.editLocationAddress">
+
+             <form name="locationeditform" id="ajax-locationeditform-form" role="form" autocomplete="off">
+                <div class="form-group">
+                  <label for = "hours">Store Hours</label>
+                  <input type="text" name="hours" tabindex="1"  placeholder="Store Hours" class="form-control" ng-model="vm.editLocation.hours" autocomplete="off" ng-minlength="3"  ng-maxlength="25">
+                  
+				        <div ng-messages="locationeditform.hours.$error">
+      					<p ng-message="minlength">Store Hours must have at least 3 characters.</p>
+      					<p ng-message="maxlength">Store Hours may not exceed 25 characters.</p>
+      					<p ng-message="required">Providing Store Hours is mandatory.</p>
+   						 </div>
+				</div>
+                  <div class="form-group">
+              <label for="phone">Phone Number</label>
+                  <input type="text" name="phone" tabindex="1" class="form-control" placeholder="Phone Number" ng-model="vm.editLocation.phoneNumber"
+       				ng-minlength="3"  ng-maxlength="50">
+       				<div ng-messages="locationeditform.phone.$error">
+      				<p ng-message="minlength">Phone Number must have at least 7 characters.</p>
+      				<p ng-message="maxlength">Phone Number may not exceed 50 characters.</p>
+    					</div>
+                </div>
+                        
+                <div class="form-group m-x-auto">
+                      <input type="submit" tabindex="4" class="form-control btn btn-success" value="Complete Edit" ng-click="vm.doEditLocation(vm.editLocation); vm.editLocation=null">
+                    </div>
+                <div class="form-group m-x-auto">
+                      <input type="submit" tabindex="4" class="form-control btn btn-success" value="Cancel Edit" ng-click="vm.editLocation=null">
+                    </div>
+                    <div class="form-group m-x-auto">
+                      <input type="submit" tabindex="4" class="form-control btn btn-success" value="Edit Address" ng-click="vm.setEditLocationAddress(vm.editLocation.address)">
+                    </div>
+                  
+              </form>
+
+
+</div>
+
+<div ng-show = "vm.editLocationAddress">
+
+             <form name="locationeditaddressform" id="ajax-locationeditaddressform-form" role="form" autocomplete="off">
+                <div class="form-group">
+                  <label for = "street">Street</label>
+                  <input type="text" name="street" tabindex="1"  placeholder="Street" class="form-control" ng-model="vm.editLocationAddress.street" autocomplete="off" ng-minlength="3"  ng-maxlength="50">
+                			
+				        <div ng-messages="locationeditaddressform.street.$error">
+      					<p ng-message="minlength">Street must have at least 3 characters.</p>
+      					<p ng-message="maxlength">Street may not exceed 50 characters.</p>
+      					<p ng-message="required">Providing a Street is mandatory.</p>
+   						 </div>
+				</div>
+                  <div class="form-group">
+              <label for="city">City</label>
+                  <input type="text" name="city" tabindex="1" class="form-control" placeholder="City" ng-model="vm.editLocationAddress.city"
+       				ng-minlength="3"  ng-maxlength="50">
+       				<div ng-messages="locationeditaddressform.city.$error">
+      				<p ng-message="minlength">City must have at least 3 characters.</p>
+      				<p ng-message="maxlength">City may not exceed 50 characters.</p>
+      				<p ng-message="required">Providing a City is mandatory.</p>
+    					</div>
+                </div>
+                  
+              <div class="form-group">
+              <label for="state">State</label>
+                  <input type="text" name="state" tabindex="1" class="form-control" placeholder="State" ng-model="vm.editLocationAddress.state"
+       				ng-minlength="2"  ng-maxlength="12">
+       				<div ng-messages="locationeditaddressform.state.$error">
+      				<p ng-message="minlength">State must have at least 2 characters.</p>
+      				<p ng-message="maxlength">State may not exceed 12 characters.</p>
+    					</div>
+                </div>
+                  
+                  <div class="form-group">
+              <label for="zip">Zip Code</label>
+                  <input type="text" name="zip" tabindex="1" class="form-control" placeholder="Zip Code" ng-model="vm.editLocationAddress.zip"
+       				ng-minlength="5"  ng-maxlength="10">
+       				<div ng-messages="locationeditaddressform.zip.$error">
+      				<p ng-message="minlength">Zip Code must have at least 5 characters.</p>
+      				<p ng-message="maxlength">Zip Code may not exceed 10 characters.</p>
+    					</div>
+                </div>
+                
+                <div class="form-group m-x-auto">
+                      <input type="submit" tabindex="4" class="form-control btn btn-success" value="Complete Address Edit" ng-click="vm.doEditAddress(vm.editLocationAddress); vm.editLocationAddress=null">
+                    </div>
+                <div class="form-group m-x-auto">
+                      <input type="submit" tabindex="4" class="form-control btn btn-success" value="Cancel Address Edit" ng-click="vm.editLocationAddress=null">
+                    </div>
+           
+                  
+              </form>
+</div>

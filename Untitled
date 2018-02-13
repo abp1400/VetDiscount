@@ -1,0 +1,3 @@
+  Changed the database schema to have a company and location instead of a store.
+This is to allow companies that have multiple locations to have company wide discounts.
+While still allowing individual locations to offer discounts.

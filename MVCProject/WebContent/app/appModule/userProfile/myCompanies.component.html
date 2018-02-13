@@ -1,0 +1,49 @@
+<div ng-hide="vm.editCompany">
+	<div ng-repeat="company in vm.results" class="editCard">
+		<h3>{{company.name}}</h3>
+		<button class="btn-sm editButton" type="submit" ng-click="vm.setEditCompany(company)" >Edit</button>
+		<button class="btn-sm deleteButton" type="submit" ng-click="vm.deleteCompany(company)" >Delete</button>
+	</div>
+</div>
+
+<div ng-show = "vm.editCompany">
+
+             <form name="companyeditform" id="ajax-companyeditform-form" role="form" autocomplete="off">
+                <div class="form-group">
+                  <label for = "name">Company Name</label>
+                  <input type="text" name="name" tabindex="1"  placeholder="Company Name" class="form-control" ng-model="vm.editCompany.name" autocomplete="off" ng-minlength="3"  ng-maxlength="25">
+                
+				        <div ng-messages="companyeditform.name.$error">
+      					<p ng-message="minlength">Company Name must have at least 3 characters.</p>
+      					<p ng-message="maxlength">Company Name may not exceed 25 characters.</p>
+      					<p ng-message="required">Providing a Company Name is mandatory.</p>
+   						 </div>
+				</div>
+                  <div class="form-group">
+              <label for="url">Website Link</label>
+                  <input type="text" name="url" tabindex="1" class="form-control" placeholder="Website Link" ng-model="vm.editCompany.storeUrl"
+       				ng-minlength="3"  ng-maxlength="50">
+       				<div ng-messages="companyeditform.url.$error">
+      				<p ng-message="minlength">Website Link must have at least 3 characters.</p>
+      				<p ng-message="maxlength">Website Link may not exceed 50 characters.</p>
+    					</div>
+                </div>
+                        
+                 <div class="form-group">
+                 <label for = "ischain">Is Company a Chain?</label>
+                  <input type="checkbox" name="ischain" ng-model="vm.editCompany.isChain">
+       				
+                </div>
+
+                <div class="form-group m-x-auto">
+                      <input type="submit" tabindex="4" class="form-control btn btn-success" value="Edit" ng-click="vm.doEditCompany(vm.editCompany); vm.editCompany=null">
+                    </div>
+                <div class="form-group m-x-auto">
+                      <input type="submit" tabindex="4" class="form-control btn btn-success" value="Cancel" ng-click="vm.editCompany=null">
+                    </div>
+                  
+              </form>
+
+
+</div>
+
